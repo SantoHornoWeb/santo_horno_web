@@ -1,0 +1,132 @@
+---
+const clients = [
+  { name: "LOMITERIA POPULAR - CORDOBA", logo: "../../public/clientes/lomiteria_popular.png" },
+  { name: "HOYTS - CORDOBA", logo: "../../public/clientes/hoyts.png" },
+  { name: "MOSTACHYS - CORDOBA", logo: "../../public/clientes/mostachys.png" },
+  { name: "LA PANCHE - CORDOBA", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+  { name: "TORNEO GOLDEN- CORDOBA", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+  { name: "STREGA - CORDOBA", logo: "../../public/clientes/strega.png" },
+  { name: "MONTAGU - CORDOBA", logo: "../../public/clientes/montagu.png" },
+  { name: "ANTARES - CORDOBA", logo: "../../public/clientes/antares.png" },
+  { name: "COLORES SANTOS - CORDOBA", logo: "../../public/clientes/colores_santos.png" },
+  { name: "THE JOURNEY - CORDOBA", logo: "../../public/clientes/journey.png" },
+  { name: "COMBI - CORDOBA", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+  { name: "DON RUFFINO - CORDOBA", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+  { name: "MAMANU - CORDOBA", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+  { name: "WYOMING - CORDOBA", logo: "../../public/clientes/wyoming.png" },
+  { name: "LOMITOS 22 - CORDOBA", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+  { name: "LA PLAZA - CORDOBA", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+  { name: "VILLA BURGUESA - CARLOS PAZ", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+  { name: "QUE LOMOS - ALTA GRACIA", logo: "../../public/clientes/lomiteria_popular.png" }, //falta
+];
+---
+
+<div class="clients-slider">
+  <div class="slider-track">
+    {clients.concat(clients).map((client, index) => (
+      <div class="client-item" key={index}>
+        <img 
+          src={client.logo} 
+          alt={`Logo de ${client.name}`} 
+          loading="lazy"
+        />
+        <span class="client-name">{client.name}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .clients-slider {
+    overflow: hidden;
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-md) 0;
+  }
+
+  .slider-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    gap: var(--spacing-lg);
+  }
+
+  .client-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-width: 150px;
+    padding: var(--spacing-sm);
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .client-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .client-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .client-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+  }
+
+  .client-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: center;
+    opacity: 0.8;
+    transition: var(--transition);
+  }
+
+  .client-item:hover .client-name {
+    opacity: 1;
+    color: var(--color-secondary);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Pausar animación al hover */
+  .clients-slider:hover .slider-track {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    .slider-track {
+      animation-duration: 20s;
+      gap: var(--spacing-md);
+    }
+    
+    .client-item {
+      min-width: 120px;
+    }
+    
+    .client-item img {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .client-name {
+      font-size: 0.8rem;
+    }
+  }
+</style>

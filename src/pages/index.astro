@@ -1,0 +1,812 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProductCard from '../components/ProductCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import SliderClientes from '../components/SliderClientes.astro';
+---
+
+<Layout title="Santo Horno - Panificadora Profesional">
+  <link rel="stylesheet" href="/src/styles/global.css">
+  
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-text fade-in">
+            <h1>
+              <span class="logo-script">PANIFICADOS PARA GASTRONOMÍA PROFESIONAL</span>
+            </h1>
+            <h2 class="hero-subtitle text-berlin">Desde 2015 elaboramos panes de alta calidad para cocinas que exigen lo mejor.</h2>
+            <p class="hero-description">
+              Santo Horno es una panificadora familiar con foco en la excelencia, la eficiencia y las relaciones a largo plazo. 
+              Elaboramos panes para hamburguesas, lomotos y más, con procesos cuidados y sabores consistentes. 
+              Nos eligen restaurantes y marcas líderes como Antares, Lomitería Popular y Hoyts Córdoba.
+            </p>
+            <div class="hero-buttons">
+              <a href="#productos" class="btn">Ver productos</a>
+              <a href="#contacto" class="btn btn-secondary">Contactar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="../../public/hero/imagen-hero.jpg" 
+             alt="Panadería artesanal" 
+             loading="eager" />
+      </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title fade-in">Nosotros</h2>
+        
+        <div class="about-intro fade-in">
+          <div class="about-text">
+            <h3 class="text-berlin">Quienes somos?</h3>
+            <p>
+              <strong>Santo Horno</strong> es una Panificadora fundada en el año 2015. Somos una empresa familiar, con alrededor de 25 empleados directos e indirectos. 
+              Nuestra línea de productos incluye variedad de panes para lomo, panes para hamburguesa, masas de pizza estilo casera y panes para choripan, pata, milanesa y pebete.
+              La Calidad es la guía de nuestra tarea cotidiana.
+              Fomentamos un buen ambiente de trabajo en nuestro interior y relaciones transparentes con nuestros clientes, con comunicaciones abiertas y respetuosas.
+
+            </p>
+            <span><strong>Propósito</strong></span>
+            <p>
+              <span style="display: block; font-weight:bold;">Hay deseos de crecer y hay oportunidades.</span>
+              <span style="display: block; font-weight:bold;">¿Por qué queremos crecer?</span>
+              <span style="display: block;">  ➪ Porque queremos superarnos a nosotros mismos. = autosuperarnos</span>
+              <span style="display: block;">  ➪ Porque queremos hacerlo mejor para nuestros clientes, para nuestros empleados y para todo aquel que se relacione con nosotros. = satisfacción para mantener la relación a largo plazo. que quienes se relacionen con nosotros tengan algo mejor.</span> 
+              <span style="display: block;">  ➪ Porque queremos tener las mejores prácticas comerciales, productivas, de manejo de recursos humanos y financieras. = profesionalización</span>
+              <span style="display: block;">  ➪ Porque ser muy profesionales es la manera correcta de hacerlo.</span>
+
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="../../public/nosotros/imagen-nosotros.png" 
+                 alt="Nuestro equipo" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="values-grid grid grid-3">
+          <div class="value-card fade-in">
+            <div class="value-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+              </svg>
+            </div>
+            <h4 class="text-berlin">Misión</h4>
+            <p>
+              Hacer los panes más ricos, de mejor calidad y a un buen precio, 
+              autosuperándonos dia a dia y trabajando con profesionalismo para lograr la satisfacción de nuestros 
+              clientes generando una relación a largo plazo.
+            </p>
+          </div>
+
+          <div class="value-card fade-in">
+            <div class="value-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h4 class="text-berlin">Visión</h4>
+            <p>
+              Ser una empresa líder en producción y comercialización de panes para gastronomía, 
+              llegando a los mercados más rentables donde nos podamos desarrollar.
+              (a los mercados gastronómicos, retail, institucionales)
+            </p>
+          </div>
+
+          <div class="value-card fade-in">
+            <div class="value-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <h4 class="text-berlin">Valores</h4>
+            <p>
+              Salud, Transparencia, Honestidad, Compromiso, Eficiencia.
+              Vamos a poner foco en:
+              Cuidado de la salud: inocuidad y valor nutricional de nuestros alimentos.
+              Atencion a las relaciones: comunicación clara, honestidad y compromiso.
+              Eficiencia: para mejorar siempre nuestra rentabilidad.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Nuestros Productos</h2>
+        
+        <div class="products-filter fade-in">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="pan">Pan</button>
+          <button class="filter-btn" data-filter="bolleria">Bollería</button>
+          <button class="filter-btn" data-filter="reposteria">Repostería</button>
+        </div>
+
+        <div class="products-grid grid grid-3">
+          <ProductCard 
+            name="PAN DE LOMO TRADICIONAL"
+            image="../../public/productos/pan_lomo_tradicional.png"
+            size="Bolsa de 12 unidades"
+            description="Tamaño chico 18cm, Tamaño Mediano 20cm y Tamaño Grande 22cm."
+            category="Pan"
+          />
+          
+          <ProductCard 
+            name="PAN DE HAMBURGUESA TIPO VIENA"
+            image="../../public/productos/pan_hamburguesa_tipo_viena.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            description="Tamaño Chico 9cm y Tamaño Grande 12cm."
+            category="Pan"
+          />
+          
+          <ProductCard 
+            name="PAN DE HAMBURGUESA RUSTICO"
+            image="../../public/productos/pan_hamburguesa_rustico.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            description="Tamaño Grande 12cm."
+            category="Pan"
+          />
+          
+          <ProductCard 
+            name="PAN DE PAPA"
+            image="../../public/productos/pan_papa.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            description="Tamaño Chico 9cm y Tamaño Grande 12cm."
+            category="Pan"
+          />
+          
+          <ProductCard 
+            name="PAN DE PAPA CON SEMILLAS"
+            image="../../public/productos/pan_papa_semilla.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidad"
+            description="Tamaño Grande 12cm."
+            category="Pan"
+          />
+          
+          <ProductCard 
+            name="PAN DE PAPA CON QUESO"
+            image="../../public/productos/pan_papa_queso.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            description="Tamaño Grande 12cm."
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="PAN DE CHORI"
+            image="../../public/productos/pan_chori.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            description="Tamaño 16cm."
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="PAN DE MILA"
+            image="../../public/productos/pan_mila.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            description="Tamaño 20cm."
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="PAN CHIP"
+            image="../../public/productos/pan_chip.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 60 unidades"
+            description="Tamaño 7cm."
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="PAN DE PEBETON"
+            image="../../public/productos/pan_pebeton.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            description="Tamaño 20cm."
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="PAN DE PEBETON SIN SEMILLAS"
+            image="../../public/productos/pan_pebeton_sin_semilla.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            description="Tamaño 20cm."
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="MASA DE PIZZA"
+            image="../../public/productos/masa_pizza.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 10 unidades"
+            description="Tamaño Mediana 30cm y Tamaño Grande 32cm."
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="MASA DE PIZZETA"
+            image="../../public/productos/masa_pizzeta.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 10 unidades"
+            description="Tamaño 20cm."
+            category="Pan"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Clientes Section -->
+    <section id="clientes" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title fade-in">Nuestros Clientes</h2>
+        <p class="section-subtitle fade-in text-center">
+          Confianza que crece día a día con empresas líderes de la región
+        </p>
+        
+        <div class="fade-in">
+          <SliderClientes />
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Blog</h2>
+        <p class="section-subtitle fade-in text-center">
+          Novedades, recetas y curiosidades del mundo de la panadería
+        </p>
+
+        <div class="blog-grid grid grid-3">
+          <BlogCard 
+            title="Los secretos del pan artesanal"
+            excerpt="Descubre las técnicas tradicionales que hacen que nuestro pan sea único. Desde la selección de harinas hasta los tiempos de fermentación."
+            image="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400"
+            date="15 Mar 2024"
+            category="Técnicas"
+            readTime="5 min"
+          />
+          
+          <BlogCard 
+            title="Nuevos productos de temporada"
+            excerpt="Presentamos nuestra línea de productos especiales para la temporada otoño-invierno. Sabores únicos que cautivarán a tus clientes."
+            image="https://images.pexels.com/photos/2135677/pexels-photo-2135677.jpeg?auto=compress&cs=tinysrgb&w=400"
+            date="8 Mar 2024"
+            category="Novedades"
+            readTime="3 min"
+          />
+          
+          <BlogCard 
+            title="Historia del pan argentino"
+            excerpt="Un recorrido por la evolución del pan en Argentina, desde las primeras panaderías hasta las técnicas modernas que utilizamos hoy."
+            image="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=400"
+            date="1 Mar 2024"
+            category="Historia"
+            readTime="8 min"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title fade-in">Contacto</h2>
+        
+        <div class="contact-content grid grid-2">
+          <div class="contact-form fade-in">
+            <h3 class="text-berlin">Envíanos un mensaje</h3>
+            <form class="form" id="whatsapp-form">
+              <div class="form-group">
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="company">Empresa</label>
+                <input type="text" id="company" name="company">
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn">Enviar mensaje</button>
+            </form>
+          </div>
+
+          <div class="contact-info fade-in">
+            <h3 class="text-berlin">Información de contacto</h3>
+            
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-berlin">Dirección</h4>
+                  <p><strong>Atencion al publico: </strong> Av. Vélez Sarsfield 1696 Barrio Guemes
+                  <p><strong>Fabrica y distribucion: </strong> Lautaro 150 Bario Las Flores <br>Ciudad Cordoba</p></p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-berlin">Teléfono</h4>
+                  <p><strong>Atencion al publico: </strong> +54 9 351 2053392</p>
+                  <p><strong>Fabrica y distribucion: </strong>+54 9 351 2053392</p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-berlin">Email</h4>
+                  <p>info@santohorno.com</p>
+                </div>
+              </div>
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-berlin">Horarios de atencion</h4>
+                  <p>Local atencion al publico: Lunes a viernes de 8:00 a 16:00 y Sabados de 8:00 a 14:30 </p>
+                  <p>Fabrica y distribucion: Lunes a Sabados de 8:00 a 14:30</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="whatsapp-contact">
+              <a href="https://wa.me/5493515949275" class="btn whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                Contactar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/54153515949275" class="whatsapp-float" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-light) 0%, var(--color-white) 100%);
+  }
+
+  .logo-script{
+    font-size: 2.5rem;
+  }
+
+  
+
+  .hero-content {
+    padding: var(--spacing-xl) var(--spacing-sm);
+  }
+
+  .hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+  /* About Section */
+  .about-intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .about-text h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .values-grid {
+    margin-top: var(--spacing-xl);
+  }
+
+  .value-card {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid transparent;
+  }
+
+  .value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-secondary);
+  }
+
+  .value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+    color: var(--color-white);
+  }
+
+  .value-card h4 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+  }
+
+  /* Products Section */
+  .products-filter {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+  }
+
+  .section-subtitle {
+    color: var(--color-gray);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Contact Section */
+  .contact-content {
+    gap: var(--spacing-xl);
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: var(--spacing-sm);
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    font-family: var(--font-body);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(231, 126, 34, 0.1);
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .contact-method {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    flex-shrink: 0;
+  }
+
+  .contact-method h4 {
+    margin-bottom: 0.25rem;
+    color: var(--color-primary);
+  }
+
+  .contact-method p {
+    margin: 0;
+    color: var(--color-gray);
+  }
+
+  .whatsapp-btn {
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1da851;
+    color: var(--color-white);
+  }
+
+  /* Botón flotante WhatsApp */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    z-index: 999;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background: #1da851;
+    color: white;
+  }
+
+  @media (max-width: 960px) {
+    .logo-script {
+      font-size: 2rem;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 80px;
+    }
+
+    .hero-image {
+      height: 50vh;
+      order: -1;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+      justify-content: center;
+    }
+
+    .about-intro {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .about-image {
+      order: -1;
+    }
+
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+
+    .whatsapp-float {
+      bottom: 1rem;
+      right: 1rem;
+      width: 50px;
+      height: 50px;
+    }
+
+    .products-filter {
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .logo-script {
+      font-size: 1.8rem;
+    }
+
+    .contact-method h4{
+      font-size: 1.3rem;
+    }
+
+    .contact-method p{
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Filtro de productos
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('[data-filter]');
+    const form = document.getElementById('whatsapp-form');
+    const phoneNumber = '5493515949275';
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Evita el envío real del formulario
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const company = document.getElementById('company').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        const text = `*Nuevo mensaje desde la web:
+        \n\n\u{1F464} Nombre: ${name}
+        \n\u{1F4E7} Email: ${email}
+        \n\u{1F3E2} Empresa: ${company || 'No especificada'}
+        \n\u{1F4AC} Mensaje: ${message}`;
+        const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+        const whatsappURL = isMobile
+          ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`
+          : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(text)}`;
+
+        // Redirige a WhatsApp
+        window.open(whatsappURL, '_blank');
+      });
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remover clase active de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Agregar clase active al botón clickeado
+        button.classList.add('active');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        // Mostrar/ocultar productos (esta funcionalidad se puede expandir)
+        console.log(`Filtrar por: ${filter}`);
+      });
+    });
+  });
+</script>

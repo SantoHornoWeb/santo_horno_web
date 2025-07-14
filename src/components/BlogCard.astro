@@ -1,0 +1,164 @@
+---
+export interface Props {
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  category?: string;
+  readTime?: string;
+}
+
+const { title, excerpt, image, date, category, readTime } = Astro.props;
+---
+
+<article class="blog-card hover-lift fade-in">
+  <div class="blog-image">
+    <img src={image} alt={title} loading="lazy" />
+    {category && <span class="blog-category">{category}</span>}
+  </div>
+  
+  <div class="blog-content">
+    <div class="blog-meta">
+      <time class="blog-date">{date}</time>
+      {readTime && <span class="blog-read-time">{readTime}</span>}
+    </div>
+    
+    <h3 class="blog-title">{title}</h3>
+    <p class="blog-excerpt">{excerpt}</p>
+    
+    <a href="#" class="blog-link">
+      Leer más
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6l-1.41-1.41z"/>
+      </svg>
+    </a>
+  </div>
+</article>
+
+<style>
+  .blog-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .blog-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .blog-card:hover .blog-image img {
+    transform: scale(1.05);
+  }
+
+  .blog-category {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .blog-content {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.85rem;
+    color: var(--color-gray);
+  }
+
+  .blog-date {
+    font-weight: 500;
+  }
+
+  .blog-read-time {
+    color: var(--color-secondary);
+  }
+
+  .blog-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+    line-height: 1.3;
+  }
+
+  .blog-excerpt {
+    color: var(--color-gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    flex: 1;
+  }
+
+  .blog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: auto;
+  }
+
+  .blog-link:hover {
+    color: var(--color-secondary);
+    transform: translateX(5px);
+  }
+
+  .blog-link svg {
+    transition: transform 0.3s ease;
+  }
+
+  .blog-link:hover svg {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 480px) {
+    .blog-image {
+      height: 180px;
+    }
+    
+    .blog-content {
+      padding: var(--spacing-sm);
+    }
+    
+    .blog-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }
+</style>
