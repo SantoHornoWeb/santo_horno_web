@@ -13,7 +13,6 @@ const { name, image, size, description, category } = Astro.props;
 <article class="product-card hover-lift fade-in">
   <div class="product-image">
     <img src={image} alt={name} loading="lazy" />
-    {category && <span class="product-category">{category}</span>}
   </div>
   
   <div class="product-content">
