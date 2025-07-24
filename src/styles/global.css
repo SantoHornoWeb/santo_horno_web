@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 /* Reset y variables CSS */
 :root {
   /* Colores de la identidad visual */
@@ -12,10 +15,17 @@
   --color-light-gray: #F5F5F5;
   
   /* Tipografías de la identidad */
-  --font-script: 'Brush Script MT', cursive; /* Para "santo horno" */
-  --font-primary: 'Arial Black', 'Helvetica', sans-serif; /* BlackFat */
+  /*
+  --font-script: 'Brush Script MT', cursive; Para "santo horno"
+  --font-primary: 'Arial Black', 'Helvetica', sans-serif;  BlackFat 
+  --font-secondary: 'Berlin Sans FB', 'Arial', sans-serif;  Berlin Sans FB Demi Bold 
+  --font-body: 'Georgia', 'Times New Roman', serif;  Provisionary 
+  */
+
+  --font-script: 'Anton', sans-serif; /* Para "santo horno" */
+  --font-primary: 'Pacifico', cursive; /*BlackFat*/
   --font-secondary: 'Berlin Sans FB', 'Arial', sans-serif; /* Berlin Sans FB Demi Bold */
-  --font-body: 'Georgia', 'Times New Roman', serif; /* Provisionary */
+  --font-body: 'Anton', sans-serif; /* Provisionary */
   
   /* Espaciado */
   --spacing-xs: 0.5rem;
@@ -102,7 +112,7 @@ h4 {
 
 p {
   margin-bottom: var(--spacing-sm);
-  color: var(--color-gray);
+  color: rgb(68, 67, 67);
   font-family: var(--font-body);
 }
 
@@ -131,8 +141,9 @@ a:hover {
   text-align: center;
   margin-bottom: var(--spacing-lg);
   position: relative;
-  font-family: var(--font-primary);
-  font-weight: 900;
+  font-family: var(--font-body);
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 .section-title::after {
