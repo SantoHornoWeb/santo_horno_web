@@ -21,7 +21,7 @@ import '../styles/global.css';
             <h1>
               <span class="logo-script">PANIFICADOS PARA GASTRONOMÍA PROFESIONAL</span>
             </h1>
-            <h2 class="hero-subtitle" style="font-family: var(--font-secondary);">Desde 2015 elaboramos panes de alta calidad para cocinas que exigen lo mejor.</h2>
+            <h2 class="hero-subtitle">Desde 2015 elaboramos panes de alta calidad para cocinas que exigen lo mejor.</h2>
             <p class="hero-description">
               Santo Horno es una panificadora familiar con foco en la excelencia, la eficiencia y las relaciones a largo plazo. 
               Elaboramos panes para hamburguesas, lomitos y más, con procesos cuidados y sabores consistentes. 
@@ -50,12 +50,12 @@ import '../styles/global.css';
           <div class="about-text">
             <h3 style="font-family: var(--font-secondary);">Quienes somos?</h3>
             <p>
-             <span style="font-weight: 700; font-family: var(--font-body);">Santo Horno</span> es una Panificadora fundada en el año 2015. Somos una empresa familiar, con alrededor de 25 empleados directos e indirectos. 
+             <span style="font-weight: 700; font-family: var(--font-body); font-weight: bold;">Santo Horno</span> es una Panificadora fundada en el año 2015. Somos una empresa familiar, con alrededor de 25 empleados directos e indirectos. 
              Nuestra línea de productos incluye variedad de panes para lomo, panes para hamburguesa, masas de pizza estilo casera y panes para choripan, pata, milanesa y pebete.
              La Calidad es la guía de nuestra tarea cotidiana.
              Fomentamos un buen ambiente de trabajo en nuestro interior y relaciones transparentes con nuestros clientes, con comunicaciones abiertas y respetuosas.
             </p>
-            <span><span style="font-weight: 400;">Propósito</span></span>
+            <span><span style="font-weight: 400; font-weight: bold;">Propósito</span></span>
             <p>
               <span style="display: block;">  ➪ Superarnos a nosotros mismos dia a dia.</span>
               <span style="display: block;">  ➪ Lograr la satisfaccion de nuestros clientes (clientes externos y tambien clientes internos) </span> 
@@ -63,7 +63,7 @@ import '../styles/global.css';
               <span style="display: block;">  ➪ Ser profesionales en lo que hacemos.</span>
 
             </p>
-            <span><span style="font-weight: 400;">Como lo vamos a lograr?</span></span>
+            <span><span style="font-weight: 400; font-weight: bold;">Como lo vamos a lograr?</span></span>
             <p>
               <span style="display: block;">  ➪ Cuidando la salud: inocuidad y valor nutricional de nuestros alimentos.</span>
               <span style="display: block;">  ➪ Atendiendo las relaciones: comunicación clara y honesta. </span> 
@@ -337,8 +337,8 @@ import '../styles/global.css';
                 </div>
                 <div>
                   <h4 style="font-family: var(--font-secondary);">Dirección</h4>
-                  <p><span style="font-weight: 400;">Fabrica y distribucion: </span> Lautaro 150 Bario Las Flores <br>Ciudad Cordoba</p></p>
-                  <p><span style="font-weight: 400;">Atencion al publico: </span> Av. Vélez Sarsfield 1696 Barrio Guemes
+                  <p><span style="font-weight: 400; font-weight: bold;">Fabrica y distribucion: </span> Lautaro 150 Bario Las Flores <br>Ciudad Cordoba</p></p>
+                  <p><span style="font-weight: 400; font-weight: bold;">Atencion al publico: </span> Av. Vélez Sarsfield 1696 Barrio Guemes
                 </div>
               </div>
 
@@ -350,8 +350,8 @@ import '../styles/global.css';
                 </div>
                 <div>
                   <h4 style="font-family: var(--font-secondary);">Teléfono</h4>
-                  <p><span style="font-weight: 400;">Fabrica y distribucion: </span>+54 9 351 5949275</p>
-                  <p><span style="font-weight: 400;">Atencion al publico: </span> +54 9 351 2053392</p>
+                  <p><span style="font-weight: 400; font-weight: bold;">Fabrica y distribucion: </span>+54 9 351 5949275</p>
+                  <p><span style="font-weight: 400; font-weight: bold;">Atencion al publico: </span> +54 9 351 2053392</p>
                 </div>
               </div>
 
@@ -374,8 +374,8 @@ import '../styles/global.css';
                 </div>
                 <div>
                   <h4 style="font-family: var(--font-secondary);">Horarios de atencion</h4>
-                  <p><span style="font-weight: 400;">Fabrica y distribucion:</span> Lunes a Sabados de 8:00 a 14:30</p>
-                  <p><span style="font-weight: 400;">Local atencion al publico:</span> Lunes a viernes de 8:00 a 16:00 y Sabados de 8:00 a 14:30 </p>
+                  <p><span style="font-weight: 400; font-weight: bold;">Fabrica y distribucion:</span> Lunes a Sabados de 8:00 a 14:30</p>
+                  <p><span style="font-weight: 400; font-weight: bold;">Local atencion al publico:</span> Lunes a viernes de 8:00 a 16:00 y Sabados de 8:00 a 14:30 </p>
                 </div>
               </div>
             </div>
@@ -414,9 +414,13 @@ import '../styles/global.css';
     background: linear-gradient(135deg, var(--color-light) 0%, var(--color-white) 100%);
   }
 
-  .logo-script{
+  .logo-script {
+    font-family: var(--font-primary);
+    font-style: italic;
+    font-weight: bold;
     font-size: 2.5rem;
   }
+}
 
   
 
@@ -432,6 +436,7 @@ import '../styles/global.css';
   }
 
   .hero-subtitle {
+    font-family: var(--font-secondary);
     font-size: 1.2rem;
     color: var(--color-secondary);
     margin-bottom: var(--spacing-md);
@@ -441,7 +446,6 @@ import '../styles/global.css';
 
   .hero-description {
     font-size: 1.1rem;
-    color: color: rgb(68, 67, 67);;
     margin-bottom: var(--spacing-lg);
     line-height: 1.6;
   }
@@ -561,6 +565,7 @@ import '../styles/global.css';
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    font-family: var(--font-body);
   }
 
   /* Contact Section */

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Reset y variables CSS */
 :root {
@@ -22,11 +21,10 @@
   --font-body: 'Georgia', 'Times New Roman', serif;  Provisionary 
   */
 
-  --font-script: 'Anton', sans-serif; /* Para "santo horno" */
-  --font-primary: 'Pacifico', cursive; /*BlackFat*/
+  --font-primary: "Raleway", sans-serif; /*BlackFat*/
   --font-secondary: 'Berlin Sans FB', 'Arial', sans-serif; /* Berlin Sans FB Demi Bold */
-  --font-body: 'Anton', sans-serif; /* Provisionary */
-  
+  --font-body: 'Montserrat', sans-serif; /* Provisionary */
+
   /* Espaciado */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -97,12 +95,7 @@ h4 {
   font-weight: 700;
 }
 
-/* Clase especial para el logo script */
-.logo-script {
-  font-family: var(--font-script);
-  font-style: italic;
-  font-weight: normal;
-}
+
 
 /* Clase para textos con Berlin Sans */
 .text-berlin {
@@ -141,9 +134,9 @@ a:hover {
   text-align: center;
   margin-bottom: var(--spacing-lg);
   position: relative;
-  font-family: var(--font-body);
+  font-family: var(--font-primary);
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .section-title::after {
