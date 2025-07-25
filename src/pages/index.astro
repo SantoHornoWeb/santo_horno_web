@@ -410,6 +410,13 @@ import '../styles/global.css';
 </Layout>
 
 <style>
+
+  /* Añade esto en tu sección de estilos */
+  article h1, aside h1, nav h1, section h1 {
+    font-size: 2.5rem !important; /* Sobreescribe cualquier otro estilo */
+    margin: 0.67em 0;
+  }
+  
   /* Hero Section */
   .hero {
     min-height: 100vh;
@@ -422,7 +429,6 @@ import '../styles/global.css';
   .logo-script {
     font-family: var(--font-primary);
     font-weight: bold;
-    font-size: 2.5rem;
   }
 
 
@@ -433,7 +439,6 @@ import '../styles/global.css';
   }
 
   .hero-text h1 {
-    font-size: 3.5rem;
     line-height: 1.1;
     margin-bottom: var(--spacing-sm);
     color: var(--color-primary);
@@ -692,6 +697,7 @@ import '../styles/global.css';
     .logo-script {
       font-size: 2rem;
     }
+
   }
 
   /* Responsive */
@@ -699,7 +705,6 @@ import '../styles/global.css';
     .hero {
       grid-template-columns: 1fr;
       min-height: auto;
-      padding-top: 80px;
     }
 
     .hero-image {

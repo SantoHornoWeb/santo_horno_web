@@ -7,13 +7,11 @@
       <div class="nav-content">
         <!-- Logo -->
         <div class="logo" >
-          <a href="#inicio" class="logo-link-img" aria-label="Santo Horno - Inicio">
             <img class="logo-header" src="./logos/logo_solo.png" alt="Santo Horno" width="180" height="180" />
             <!-- <div class="logo-text">
               <span class="logo-script">santo horno</span>
               <span class="logo-subtitle text-berlin">PANIFICADORA</span>
             </div> -->
-          </a>
         </div>
 
         <!-- Navegación Desktop -->
@@ -67,9 +65,6 @@
     min-width: 92%;
   }
 
-  .logo{
-    position: relative;
-  }
 
   .logo-link-img{
     position: relative;
@@ -77,7 +72,8 @@
 
   .logo-header{
     position: absolute;
-    left: 50%;
+    left: 0%;
+    top: -84%;
   }
 
   .header.scrolled {
@@ -94,7 +90,8 @@
 
   .header.scrolled .logo-header{
     position: absolute;
-    right: 85%;
+    top: -60%;
+    left: 3%;
     width: 120px;
     height: 120px;
   }
@@ -280,7 +277,8 @@
     .logo-header{
       width: 160px;
       height: 160px;
-      right: 75%;
+      right: 20%;
+      top: -70%;
     }
 
     .logo-link-img{
@@ -291,6 +289,15 @@
   }
 
   @media (max-width: 1024px) {
+    .header.scrolled .logo-header{
+      top: -50%;
+      left: 2%;
+    }
+
+    .nav-content{
+      width: 98%;
+    }
+
     .nav-menu {
       display: none;
     }
@@ -309,9 +316,10 @@
     }
 
     .logo-header{
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       right: 75%;
+      top: -64%;
     }
 
     .logo-link-img{
@@ -340,21 +348,17 @@
     }
 
     .logo-header{
-      width: 120px;
-      height: 120px;
-      right: 80%;
+      width: 160px;
+      height: 160px;
+      right: 50%;
     }
-
-    .logo-link-img{
-      margin-left: 55px;
-      padding-left: 5px;
-    }
-
-
-
   }
 
   @media (max-width: 480px) {
+    .logo-header{
+      left: -4%;
+    }
+
     .logo-script {
       font-size: 1.3rem;
     }

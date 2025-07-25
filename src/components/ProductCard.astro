@@ -100,10 +100,28 @@ const { name, image, size, description, category } = Astro.props;
     flex: 1;
   }
 
+  @media (max-width: 768px) {
+    .product-card{
+      flex-direction: column;
+      height: 460px;
+      width: 60%;
+      margin: 0 auto;
+    }
+    
+    .product-image {
+      height: auto;
+    }
+    
+    .product-content {
+      padding: var(--spacing-sm);
+    }
+    
+  }
+
 
   @media (max-width: 480px) {
-    .product-image {
-      height: 180px;
+    .product-card{
+      width: 80%;
     }
     
     .product-content {

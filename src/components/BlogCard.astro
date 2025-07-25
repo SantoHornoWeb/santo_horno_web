@@ -146,7 +146,33 @@ const { title, excerpt, image, date, category, readTime } = Astro.props;
     transform: translateX(3px);
   }
 
+  @media (max-width: 768px) {
+    .blog-card {
+      width: 80%;
+      margin: auto;
+    }
+    
+    .blog-image {
+      height: 180px;
+    }
+    
+    .blog-content {
+      padding: var(--spacing-sm);
+    }
+    
+    .blog-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }
+
   @media (max-width: 480px) {
+    .blog-card{
+      width: 85%;
+      margin: auto;
+    }
+    
     .blog-image {
       height: 180px;
     }
