@@ -21,7 +21,7 @@ import '../styles/global.css';
             <h1>
               <span class="logo-script">Panificados para gastronomía</span>
             </h1>
-            <h2 class="hero-subtitle">Desde 2015 elaboramos panes de alta calidad para cocinas que exigen lo mejor.</h2>
+            <h2 class="hero-subtitle">Elaboramos panes de alta calidad para cocinas que exigen lo mejor.</h2>
             <p class="hero-description">
               Santo Horno es una panificadora familiar con foco en la excelencia, la eficiencia y las relaciones a largo plazo. 
               Elaboramos panes para hamburguesas, lomitos y más, con procesos cuidados y sabores consistentes. 
@@ -48,7 +48,7 @@ import '../styles/global.css';
         
         <div class="about-intro fade-in">
           <div class="about-text">
-            <h3 style="font-family: var(--font-secondary);">Quienes somos?</h3>
+            <h3 style="font-family: var(--font-secondary);">¿Quienes somos?</h3>
             <p>
              <span style="font-weight: 700; font-family: var(--font-body); font-weight: bold;">Santo Horno</span> es una empresa familiar fundada en el año 2015, dedicada a la fabricación de panes para gastronomía.
             </p>
@@ -84,9 +84,7 @@ import '../styles/global.css';
         <div class="values-grid grid grid-3">
           <div class="value-card fade-in">
             <div class="value-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
-              </svg>
+              <img class="imagen-vmv" src="./santo_horno/mision.jpeg" alt="Mision">
             </div>
             <h4 style="font-family: var(--font-secondary);">Misión</h4>
             <p>
@@ -98,9 +96,7 @@ import '../styles/global.css';
 
           <div class="value-card fade-in">
             <div class="value-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
+              <img class="imagen-vmv" src="./santo_horno/vision.jpeg" alt="Visión">
             </div>
             <h4 style="font-family: var(--font-secondary);">Visión</h4>
             <p>
@@ -111,9 +107,7 @@ import '../styles/global.css';
 
           <div class="value-card fade-in">
             <div class="value-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
+              <img class="imagen-vmv" src="./santo_horno/valores.jpeg" alt="Valores">
             </div>
             <h4 style="font-family: var(--font-secondary);">Valores</h4>
             <p>
@@ -271,7 +265,7 @@ import '../styles/global.css';
             title="Los secretos del pan artesanal"
             excerpt="Descubre las técnicas tradicionales que hacen que nuestro pan sea único. Desde la selección de harinas hasta los tiempos de fermentación."
             image="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400"
-            date="15 Mar 2024"
+            date="28 Jul 2025"
             category="Técnicas"
             readTime="5 min"
           />
@@ -280,7 +274,7 @@ import '../styles/global.css';
             title="Nuevos productos de temporada"
             excerpt="Presentamos nuestra línea de productos especiales para la temporada otoño-invierno. Sabores únicos que cautivarán a tus clientes."
             image="https://images.pexels.com/photos/2135677/pexels-photo-2135677.jpeg?auto=compress&cs=tinysrgb&w=400"
-            date="8 Mar 2024"
+            date="28 Jul 2025"
             category="Novedades"
             readTime="3 min"
           />
@@ -289,7 +283,7 @@ import '../styles/global.css';
             title="Historia del pan argentino"
             excerpt="Un recorrido por la evolución del pan en Argentina, desde las primeras panaderías hasta las técnicas modernas que utilizamos hoy."
             image="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=400"
-            date="1 Mar 2024"
+            date="28 Jul 2025"
             category="Historia"
             readTime="8 min"
           />
@@ -537,6 +531,11 @@ import '../styles/global.css';
     color: var(--color-primary);
   }
 
+  .imagen-vmv{
+      width: 180px;
+      height: 140px;
+    }
+
   /* Products Section */
   .products-filter {
     display: flex;
@@ -693,6 +692,8 @@ import '../styles/global.css';
     color: white;
   }
 
+  
+
   @media (max-width: 960px) {
     .logo-script {
       font-size: 2rem;
@@ -752,6 +753,10 @@ import '../styles/global.css';
       padding: 0.5rem 1rem;
       font-size: 0.9rem;
     }
+
+    .imagen-vmv{
+      height: 100px;
+    }
   }
 
   @media (max-width: 480px) {
@@ -774,6 +779,10 @@ import '../styles/global.css';
 
     .contact-method p{
       font-size: 1rem;
+    }
+
+    .imagen-vmv{
+      height: 100px;
     }
   }
 </style>
