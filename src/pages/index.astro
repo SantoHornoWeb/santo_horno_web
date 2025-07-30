@@ -263,32 +263,121 @@ import '../styles/global.css';
         <div class="blog-grid grid grid-3">
           <BlogCard 
             title="Los secretos del pan artesanal"
-            excerpt="Descubre las técnicas tradicionales que hacen que nuestro pan sea único. Desde la selección de harinas hasta los tiempos de fermentación."
+            excerpt="En Panificadora Santo Horno, creemos que un buen pan no se improvisa: se trabaja todos los días, con compromiso, con técnica, y con respeto por lo que representa. ¿Querés conocer cómo trabajamos? Te lo contamos."
             image="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400"
             date="28 Jul 2025"
             category="Técnicas"
-            readTime="5 min"
+            fullContent={`
+              <p>En <strong>Panificadora Santo Horno</strong>, creemos que un buen pan no se improvisa: se trabaja todos los días, con compromiso, con técnica, y con respeto por lo que representa.</p>
+              
+              <p><strong>¿Querés conocer cómo trabajamos? Te lo contamos.</strong></p>
+              
+              <h3 style="font-size: 1.5rem;">1. Ingredientes nobles</h3>
+              <p>Usamos <strong>harina de calidad</strong>, <strong>agua pura</strong>, sal y aditivos naturales en cantidades mínimas, solo lo necesario para garantizar que nuestros productos lleguen frescos y en condiciones. Lo simple, bien hecho, siempre funciona.</p>
+              
+              <h3 style="font-size: 1.5rem;">2. Fermentación controlada</h3>
+              <p>Nuestros panes fermentan en cámaras especiales, con temperatura y humedad reguladas. Esto nos permite mantener <strong>consistencia</strong>, sin resignar sabor ni textura.</p>
+              
+              <h3 style="font-size: 1.5rem;">3. Tecnología que acompaña, manos que hacen</h3>
+              <p>Tenemos <strong>equipamiento industrial</strong> para garantizar volumen y seguridad alimentaria, pero nuestros panes no salen de una línea automática. Cada receta está pensada y ajustada por nuestros panaderos: que saben, que prueban, y que no se conforman.</p>
+              
+              <h3 style="font-size: 1.5rem;">4. Horneado todos los días</h3>
+              <p>Nuestro pan se hornea a diario, en hornos rotativos que garantizan una cocción pareja.</p>
+            `}
           />
           
           <BlogCard 
-            title="Nuevos productos de temporada"
-            excerpt="Presentamos nuestra línea de productos especiales para la temporada otoño-invierno. Sabores únicos que cautivarán a tus clientes."
+            title="Panes pensados para cada sándwich"
+            excerpt="Sabemos que no hay buen sándwich sin buen pan. Por eso trabajamos con cocineros, bodegones, hamburgueserías, caterings y cervecerías, desarrollando productos que se adapten a cada tipo de preparación. Acá te dejamos una guía rápida para elegir el ideal"
             image="https://images.pexels.com/photos/2135677/pexels-photo-2135677.jpeg?auto=compress&cs=tinysrgb&w=400"
             date="28 Jul 2025"
-            category="Novedades"
-            readTime="3 min"
+            category="Consejos"
+            fullContent={`
+              <p>Sabemos que no hay buen sándwich sin buen pan. Por eso trabajamos con cocineros, bodegones, hamburgueserías, caterings y cervecerías, desarrollando productos que se adapten a cada tipo de preparación. Acá te dejamos una guía rápida para elegir el ideal:</p>
+              
+              <h3 style="font-size: 1.5rem;">🥩 Para lomo</h3>
+              <p><strong>Pan tipo viena artesanal – en tres tamaños</strong></p>
+              <p><strong>Grande (22 cm) / Mediano (20 cm) / Chico (18 cm)</strong></p>
+              <p>Pan suave, con miga esponjosa y corteza fina. Acompaña sin romperse. Ideal para lomitos clásicos y sándwiches generosos.</p>
+              
+              <h3 style="font-size: 1.5rem;">🍔 Para hamburguesas</h3>
+              <p><strong>Pan de Papa</strong> <em>(también con queso, con semillas y en versión chica de 9 cm)</em></p>
+              <p>Textura tierna, humedad natural y un sabor que no compite con la carne. Elegido por hamburgueserías premium.</p>
+              
+              <p><strong>Pan Hamburguesa con lino y sésamo</strong></p>
+              <p>Ideal para cartas clásicas o sliders. Suave, con semillas tostadas que suman sabor.</p>
+              
+              <p><strong>Pan Rústico (12 cm)</strong></p>
+              <p>Corteza más firme, miga densa. Perfecto para hamburguesas más pesadas, con ingredientes intensos.</p>
+              
+              <h3 style="font-size: 1.5rem;">⭐ Panes especiales para ocasiones únicas</h3>
+              <p><strong>Pan para un buen sandwich de Mila</strong> – Firme, alargado, estructura pensada para contener sin desarmarse un sandwich de milanesa con aderezo, lechuga, tomate, huevo y todo lo que quieras sumar!</p>
+              
+              <p><strong>Pan para Chori</strong> – Corteza fina, miga húmeda, ideal para parrilla. Para acompañar el mejor choripán. Un pan firme pero tierno.</p>
+              
+              <h3 style="font-size: 1.5rem;">🥪 (NUEVO) Pan de pizza para sándwich</h3>
+              <p>Estamos sumando un nuevo pan que muchos nos pedían: ¿Te imaginás un sándwich con la base crocante y la miga húmeda de una buena pizza al molde?</p>
+              
+              <p><strong>Ideal para:</strong></p>
+              <ul>
+                <li>Sándwiches calientes tipo pizza rellena.</li>
+                <li>Provoleta, bondiola, panceta.</li>
+                <li>Jamón y queso con una buena mayo casera.</li>
+              </ul>
+              
+              <p>Muy pronto estará disponible. ¿Querés probarlo antes que nadie? <strong>Escribinos y te sumamos a las pruebas.</strong></p>
+            `}
           />
           
           <BlogCard 
-            title="Historia del pan argentino"
-            excerpt="Un recorrido por la evolución del pan en Argentina, desde las primeras panaderías hasta las técnicas modernas que utilizamos hoy."
+            title="¿Sos gastronómico y buscás un pan que rinda?"
+            excerpt="En Santo Horno, desarrollamos recetas que acompañan el trabajo en cocina: panes que no se desarman, que suman sabor, y que se adaptan al tipo de sándwich que querés servir. ¿Tenés una receta estrella en tu carta? Escribinos, seguro tenemos el pan para vos."
             image="https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=400"
             date="28 Jul 2025"
-            category="Historia"
-            readTime="8 min"
+            category="Consejos"
+            fullContent={`
+              <p>En <strong>Santo Horno</strong>, desarrollamos recetas que acompañan el trabajo en cocina: panes que no se desarman, que suman sabor, y que se adaptan al tipo de sándwich que querés servir. ¿Tenés una receta estrella en tu carta? <strong>Escribinos</strong>, seguro tenemos el pan para vos.</p>
+              
+              <h3 style="font-size: 1.5rem;">Productos disponibles</h3>
+              
+              <h4 style="font-size: 1.25rem;">🥖 Panes de lomo</h4>
+              <ul>
+                <li>Grande (22 cm) x12</li>
+                <li>Mediano (20 cm) x12</li>
+                <li>Chico (18 cm) x12</li>
+              </ul>
+              
+              <h4 style="font-size: 1.25rem;">🍔 Panes de hamburguesa</h4>
+              <ul>
+                <li>Pan Hamburguesa con lino y sésamo (12 cm) x12</li>
+                <li>Pan Hamburguesa chico con lino y sésamo (9 cm) x12</li>
+                <li>Pan Rústico (12 cm) x12</li>
+                <li>Pan de Papa (12 cm) x12 <em>(también con queso, con semillas y en versión chica de 9 cm)</em></li>
+              </ul>
+              
+              <h4 style="font-size: 1.25rem;">🍕 Masas de pizza</h4>
+              <ul>
+                <li>Masa de Pizza Mediana (30 cm) x10</li>
+                <li>Masa de Pizza Grande (32 cm) x10</li>
+                <li>Masa de Pizzeta (20 cm) x10</li>
+              </ul>
+              
+              <h4 style="font-size: 1.25rem;">🥪 Panes especiales</h4>
+              <ul>
+                <li>Pan Chip (7 cm) x60</li>
+                <li>Pebeton (20 cm) x12</li>
+                <li>Pebeton sin semillas (20 cm) x12</li>
+                <li>Pan para Chori (16 cm) x12</li>
+                <li>Pan para Mila (20 cm) x12</li>
+              </ul>
+              
+              <div style="margin-top: 2rem; padding: 1rem; background: var(--color-light); border-radius: var(--border-radius); border-left: 4px solid var(--color-primary);">
+                <p><strong>¿Querés conocer más sobre nuestros productos o necesitás algo específico para tu negocio?</strong><br>
+                Contactanos y trabajamos juntos para encontrar la solución perfecta para tu carta.</p>
+              </div>
+            `}
           />
-        </div>
-      </div>
+</div>
     </section>
 
     <!-- Contacto Section -->
@@ -405,13 +494,11 @@ import '../styles/global.css';
 
 <style>
 
-  /* Añade esto en tu sección de estilos */
   article h1, aside h1, nav h1, section h1 {
     font-size: 2.5rem !important; /* Sobreescribe cualquier otro estilo */
     margin: 0.67em 0;
   }
   
-  /* Hero Section */
   .hero {
     min-height: 100vh;
     display: grid;
@@ -704,6 +791,7 @@ import '../styles/global.css';
     }
 
   }
+
 
   /* Responsive */
   @media (max-width: 768px) {
