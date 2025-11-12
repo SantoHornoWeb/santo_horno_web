@@ -4,10 +4,30 @@ export interface Props {
   image: string;
   size: string;
   description?: string;
+  descriptionItems?: string[];
+  lockTitleHeight?: boolean | number;
   category?: string;
 }
 
-const { name, image, size, description, category } = Astro.props;
+const {
+  name,
+  image,
+  size,
+  description,
+  descriptionItems,
+  lockTitleHeight = false,
+  category
+} = Astro.props;
+
+const titleMinHeight =
+  typeof lockTitleHeight === 'number'
+    ? lockTitleHeight
+    : lockTitleHeight
+      ? 2.5
+      : null;
+
+const titleClassList = ['product-name', titleMinHeight && 'product-name--fixed'].filter(Boolean);
+const titleStyle = titleMinHeight ? `--product-name-min-height: ${titleMinHeight}rem;` : undefined;
 ---
 
 <article class="product-card hover-lift fade-in">
@@ -16,9 +36,17 @@ const { name, image, size, description, category } = Astro.props;
   </div>
   
   <div class="product-content">
-    <h3 class="product-name">{name}</h3>
+    <h3 class:list={titleClassList} style={titleStyle}>{name}</h3>
     <p class="product-size">{size}</p>
-    {description && <p class="product-description">{description}</p>}
+    {descriptionItems && descriptionItems.length > 0 ? (
+      <ul class="product-description-list">
+        {descriptionItems.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    ) : (
+      description && <p class="product-description">{description}</p>
+    )}
   
   </div>
 </article>
@@ -30,9 +58,9 @@ const { name, image, size, description, category } = Astro.props;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
-    height: 100%;
     display: flex;
     flex-direction: column;
+    align-self: start;
   }
 
   .product-card:hover {
@@ -73,16 +101,22 @@ const { name, image, size, description, category } = Astro.props;
 
   .product-content {
     padding: var(--spacing-md);
-    flex: 1;
     display: flex;
     flex-direction: column;
   }
 
   .product-name {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
     color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    max-width: 190px;
+  }
+
+  .product-name--fixed {
+    min-height: var(--product-name-min-height, 2.5rem);
+    display: flex;
+    align-items: flex-start;
   }
 
   .product-size {
@@ -93,27 +127,62 @@ const { name, image, size, description, category } = Astro.props;
   }
 
   .product-description {
-    color: color: rgb(68, 67, 67);;
+    color: rgb(68, 67, 67);
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: var(--spacing-md);
-    flex: 1;
+  }
+
+  .product-description-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-md);
+    color: rgb(68, 67, 67);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .product-description-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .product-description-list li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(202, 138, 73, 0.25);
+    flex-shrink: 0;
   }
 
   @media (max-width: 768px) {
     .product-card{
       flex-direction: column;
-      height: 460px;
+      /* height: 460px; */
       width: 60%;
       margin: 0 auto;
     }
     
     .product-image {
-      height: auto;
+      height: 200px;
     }
     
     .product-content {
       padding: var(--spacing-sm);
+    }
+
+    .product-name--fixed{
+      min-height: auto;
+      height: auto;
+    }
+
+    .product-name {
+      max-width: none;
     }
     
   }
@@ -122,6 +191,23 @@ const { name, image, size, description, category } = Astro.props;
   @media (max-width: 480px) {
     .product-card{
       width: 80%;
+    }
+
+    .product-image {
+      height: 250px;
+    }
+
+    .product-name {
+      max-width: none;
+    }
+
+    .product-image {
+      height: none;
+    }
+
+    .product-name--fixed{
+      min-height: auto;
+      height: auto;
     }
     
     .product-content {
