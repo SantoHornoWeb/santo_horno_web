@@ -111,14 +111,20 @@ import '../styles/global.css';
             name="PAN DE LOMO TRADICIONAL"
             image="./productos/pan_lomo_tradicional.png"
             size="Bolsa de 12 unidades"
-            description="Tamaño chico 18cm, Tamaño Mediano 20cm y Tamaño Grande 22cm."
+            descriptionItems={[
+              "Tamaño chico 18cm",
+              "Tamaño mediano 20cm",
+              "Tamaño grande 22cm",
+            ]}
+            lockTitleHeight={3.25}
             category="Pan"
           />
           <ProductCard 
             name="PAN DE PIZZA PARA LOMO"
             image="./productos/pan_pizza_para_lomo.jpeg"
             size="Bolsa de 12 unidades"
-            description="Tamaño Mediano 19cm."
+            descriptionItems={["Tamaño mediano 19cm"]}
+            lockTitleHeight={3.25}
             category="Pan"
           />
           
@@ -126,7 +132,8 @@ import '../styles/global.css';
             name="PAN DE HAMBURGUESA TIPO VIENA CON SEMILLAS"
             image="./productos/pan_hamburguesa_tipo_viena.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 12 unidades"
-            description="Tamaño Grande 12cm."
+            descriptionItems={["Tamaño grande 12cm"]}
+            lockTitleHeight={3.25}
             category="Pan"
           />
 
@@ -134,7 +141,8 @@ import '../styles/global.css';
             name="PAN DE HAMBURGUESA TIPO VIENA SIN SEMILLAS"
             image="./productos/pan_hamburguesa_tipo_viena_sin_semilla.jpeg"
             size="Bolsa de 15 unidades"
-            description="Tamaño Chico 9cm."
+            descriptionItems={["Tamaño chico 9cm"]}
+            lockTitleHeight={3.25}
             category="Pan"
           />
           
@@ -142,7 +150,8 @@ import '../styles/global.css';
             name="PAN DE HAMBURGUESA RUSTICO"
             image="./productos/pan_hamburguesa_rustico.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 12 unidades"
-            description="Tamaño Grande 12cm."
+            descriptionItems={["Tamaño grande 12cm"]}
+            lockTitleHeight={2.25}
             category="Pan"
           />
           
@@ -150,31 +159,37 @@ import '../styles/global.css';
             name="PAN DE PAPA"
             image="./productos/pan_papa.jpeg?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 12 unidades"
-            description="Tamaño Chico 9cm y Tamaño Grande 12cm."
+            descriptionItems={[
+              "Tamaño chico 9cm",
+              "Tamaño grande 12cm",
+            ]}
+            lockTitleHeight={2.25}
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="PAN DE PAPA CON QUESO"
+            image="./productos/pan_papa_queso.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            descriptionItems={["Tamaño grande 12cm"]}
+            lockTitleHeight={2.25}
             category="Pan"
           />
           
           <ProductCard 
             name="PAN DE PAPA CON SEMILLAS"
             image="./productos/pan_papa_semilla.png?auto=compress&cs=tinysrgb&w=400"
-            size="Bolsa de 12 unidad"
-            description="Tamaño Grande 12cm."
+            size="Bolsa de 12 unidades"
+            descriptionItems={["Tamaño grande 12cm"]}
+            lockTitleHeight={2.25}
             category="Pan"
           />
           
           <ProductCard 
-            name="PAN DE PAPA CON QUESO"
-            image="./productos/pan_papa_queso.png?auto=compress&cs=tinysrgb&w=400"
-            size="Bolsa de 12 unidades"
-            description="Tamaño Grande 12cm."
-            category="Pan"
-          />
-
-          <ProductCard 
             name="PAN DE CHORI"
             image="./productos/pan_chori.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 12 unidades"
-            description="Tamaño 16cm."
+            descriptionItems={["Tamaño 16cm"]}
             category="Pan"
           />
 
@@ -182,7 +197,7 @@ import '../styles/global.css';
             name="PAN DE MILA"
             image="./productos/pan_mila.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 12 unidades"
-            description="Tamaño 22cm."
+            descriptionItems={["Tamaño 22cm"]}
             category="Pan"
           />
 
@@ -190,23 +205,7 @@ import '../styles/global.css';
             name="PAN CHIP"
             image="./productos/pan_chip.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 60 unidades"
-            description="Tamaño 7cm."
-            category="Pan"
-          />
-
-          <ProductCard 
-            name="PAN DE PEBETON"
-            image="./productos/pan_pebeton.png?auto=compress&cs=tinysrgb&w=400"
-            size="Bolsa de 12 unidades"
-            description="Tamaño 20cm."
-            category="Pan"
-          />
-
-          <ProductCard 
-            name="PAN DE PEBETON SIN SEMILLAS"
-            image="./productos/pan_pebeton_sin_semilla.png?auto=compress&cs=tinysrgb&w=400"
-            size="Bolsa de 12 unidades"
-            description="Tamaño 20cm."
+            descriptionItems={["Tamaño 7cm"]}
             category="Pan"
           />
 
@@ -214,7 +213,10 @@ import '../styles/global.css';
             name="MASA DE PIZZA"
             image="./productos/masa_pizza.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 10 unidades"
-            description="Tamaño Mediana 30cm y Tamaño Grande 32cm."
+            descriptionItems={[
+              "Tamaño mediana 30cm",
+              "Tamaño grande 32cm",
+            ]}
             category="Pan"
           />
 
@@ -222,7 +224,26 @@ import '../styles/global.css';
             name="MASA DE PIZZETA"
             image="./productos/masa_pizzeta.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 10 unidades"
-            description="Tamaño 20cm."
+            descriptionItems={["Tamaño 20cm"]}
+            lockTitleHeight={3.45}
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="PAN DE PEBETE O SUPERPANCHO CON SEMILLAS"
+            image="./productos/pan_pebeton.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            descriptionItems={["Tamaño 20cm"]}
+            lockTitleHeight={3.45}
+            category="Pan"
+          />
+
+          <ProductCard 
+            name="PAN DE PEBETE O SUPERPANCHO "
+            image="./productos/pan_pebeton_sin_semilla.png?auto=compress&cs=tinysrgb&w=400"
+            size="Bolsa de 12 unidades"
+            descriptionItems={["Tamaño 20cm"]}
+            lockTitleHeight={3.45}
             category="Pan"
           />
         </div>
