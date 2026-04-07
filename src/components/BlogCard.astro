@@ -12,27 +12,33 @@ const { title, excerpt, image, date, category, fullContent } = Astro.props;
 const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
-<article class="blog-card hover-lift fade-in">
-  <div class="blog-image">
+<article class="blog-card fade-in">
+  <div class="blog-image" data-modal={modalId}>
     <img src={image} alt={title} loading="lazy" />
+    <div class="blog-image-overlay"></div>
     {category && <span class="blog-category">{category}</span>}
   </div>
   
   <div class="blog-content">
     <div class="blog-meta">
-      <time class="blog-date">{date}</time>
-    
+
+      <div class="blog-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>3 min</span>
+      </div>
     </div>
     
-    <h3 class="blog-title">{title}</h3>
+    <h3 class="blog-title" data-modal={modalId}>{title}</h3>
     <p class="blog-excerpt">{excerpt}</p>
 
-    <button class="blog-link" data-modal={modalId}>
-      Leer más
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6l-1.41-1.41z"/>
-      </svg>
-    </button>
+    <div class="blog-footer">
+      <button class="blog-link" data-modal={modalId}>
+        <span>Leer artículo completo</span>
+        <span class="blog-link-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+      </button>
+    </div>
   </div>
 </article>
 
@@ -52,8 +58,12 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
     </div>
     
     <div class="modal-content">
-      <div class="modal-meta">
-        <time class="modal-date">{date}</time>
+      <div class="modal-meta-wrapper">
+
+        <div class="modal-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span class="modal-read-time">Lectura de 3 min</span>
+        </div>
       </div>
       
       <h2 class="modal-title">{title}</h2>
@@ -88,11 +98,14 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
     }
   }
 
-  // Event listeners para los botones de "Leer más"
-  document.querySelectorAll('.blog-link[data-modal]').forEach(button => {
-    button.addEventListener('click', (e) => {
+  // Event listeners para los botones e imagenes de "Leer más"
+  document.querySelectorAll('[data-modal]').forEach(element => {
+    element.addEventListener('click', (e) => {
+      // Ignorar si el clic fue en un hijo que no debe abrir el modal pero las categorias no
+      if(e.target.classList && e.target.classList.contains('blog-category')) return;
+      
       e.preventDefault();
-      const modalId = button.getAttribute('data-modal');
+      const modalId = element.getAttribute('data-modal');
       openModal(modalId);
     });
   });
@@ -132,47 +145,77 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
     background: var(--color-white);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
   .blog-card:hover {
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.08); /* Sombra más pronunciada en hover */
   }
 
   .blog-image {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 240px; /* Un poco más alto para mejor vista de la foto */
     overflow: hidden;
+    cursor: pointer;
+  }
+
+  .blog-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.0) 40%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .blog-card:hover .blog-image-overlay {
+    opacity: 1;
   }
 
   .blog-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   .blog-card:hover .blog-image img {
-    transform: scale(1.05);
+    transform: scale(1.08);
   }
 
   .blog-category {
     position: absolute;
     top: var(--spacing-sm);
     left: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.70rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(4px);
+    transition: var(--transition);
+  }
+
+  .blog-card:hover .blog-category {
     background: var(--color-primary);
     color: var(--color-white);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--border-radius);
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
   }
 
   .blog-content {
@@ -180,15 +223,25 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
     flex: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
+    background: var(--color-white);
   }
 
   .blog-meta {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     margin-bottom: var(--spacing-sm);
     font-size: 0.85rem;
-    color: var(--color-gray);
+    color: #888;
+    font-family: var(--font-secondary);
+  }
+
+  .blog-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
   }
 
   .blog-date {
@@ -196,11 +249,17 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
   }
 
   .blog-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-dark);
     line-height: 1.3;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .blog-card:hover .blog-title {
+    color: var(--color-primary);
   }
 
   .blog-excerpt {
@@ -208,53 +267,91 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
     line-height: 1.6;
     margin-bottom: var(--spacing-md);
     flex: 1;
+    font-size: 0.95rem;
+  }
+
+  .blog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(0,0,0,0.06);
+    margin-top: auto;
   }
 
   .blog-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     color: var(--color-primary);
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: none;
     transition: var(--transition);
-    margin-top: auto;
     background: none;
     border: none;
     cursor: pointer;
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding: 0;
+    outline: none;
   }
 
-  .blog-link:hover {
-    color: var(--color-secondary);
-    transform: translateX(5px);
+  .blog-link span:first-child {
+    position: relative;
   }
 
-  .blog-link svg {
-    transition: transform 0.3s ease;
+  .blog-link span:first-child::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--color-primary);
+    transform-origin: bottom right;
+    transition: transform 0.35s ease-out;
   }
 
-  .blog-link:hover svg {
-    transform: translateX(3px);
+  .blog-card:hover .blog-link span:first-child::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
-  /* Modal Styles */
+  .blog-link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(139, 90, 60, 0.08); /* var(--color-primary) with opacity */
+    color: var(--color-primary);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .blog-card:hover .blog-link-icon {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateX(4px) scale(1.1);
+  }
+
+  /* Modal Styles Enhancements */
   .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(248, 241, 239, 0.8);
-    backdrop-filter: blur(4px);
+    background: rgba(44, 24, 16, 0.6); /* Oscurecido ligeramente */
+    backdrop-filter: blur(8px); /* Mayor difuminado */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     padding: var(--spacing-sm);
   }
 
@@ -264,15 +361,17 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
   }
 
   .modal-container {
-    background: var(--color-white);
-    border-radius: var(--border-radius-lg);
-    max-width: 800px;
+    background: rgba(255, 255, 255, 0.85); /* Efecto vidrio esmerilado blanco */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: none;
+    max-width: 850px;
     width: 100%;
     max-height: 90vh;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    transform: translateY(50px) scale(0.95);
-    transition: transform 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(30px) scale(0.98);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: column;
   }
@@ -284,8 +383,19 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
   .modal-header {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
+  }
+
+  .modal-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+    pointer-events: none;
   }
 
   .modal-image {
@@ -302,92 +412,146 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
 
   .modal-category {
     position: absolute;
-    top: var(--spacing-sm);
-    left: var(--spacing-sm);
+    top: var(--spacing-md);
+    left: var(--spacing-md);
     background: var(--color-primary);
     color: var(--color-white);
     padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    font-size: 0.85rem;
-    font-weight: 600;
+    border-radius: 30px;
+    font-size: 0.80rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-family: var(--font-secondary);
+    letter-spacing: 1px;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
 
   .modal-close {
     position: absolute;
     top: var(--spacing-sm);
     right: var(--spacing-sm);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
-    color: var(--color-dark);
+    transition: all 0.3s ease;
+    color: var(--color-white);
+    z-index: 10;
   }
 
   .modal-close:hover {
     background: var(--color-white);
-    transform: scale(1.1);
+    color: var(--color-primary);
+    transform: scale(1.05) rotate(90deg);
   }
 
   .modal-content {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     overflow-y: auto;
     flex: 1;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    margin-top: -24px;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
   }
 
-  .modal-meta {
+  /* Animación de entrada escalonada en el Modal */
+  .modal-meta-wrapper,
+  .modal-title,
+  .modal-body {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .modal-overlay.active .modal-meta-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.20s;
+  }
+
+  .modal-overlay.active .modal-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.30s;
+  }
+
+  .modal-overlay.active .modal-body {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.40s;
+  }
+
+  .modal-meta-wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
     margin-bottom: var(--spacing-sm);
-    font-size: 0.9rem;
-    color: var(--color-gray);
+    font-size: 0.95rem;
+    color: #666;
     padding-bottom: var(--spacing-sm);
-    border-bottom: 1px solid var(--color-light-gray);
+  }
+
+  .modal-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .modal-date, .modal-read-time {
+    font-weight: 500;
+    font-family: var(--font-secondary);
   }
 
   .modal-date {
-    font-weight: 600;
     color: var(--color-primary);
-  }
-
-  .modal-read-time {
-    color: var(--color-secondary);
-    font-weight: 500;
   }
 
   .modal-title {
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 2.2rem;
+    font-weight: 900;
     margin-bottom: var(--spacing-md);
-    color: var(--color-primary);
-    line-height: 1.2;
+    color: var(--color-dark);
+    line-height: 1.25;
     font-family: var(--font-primary);
   }
 
   .modal-body {
     line-height: 1.8;
-    color: var(--color-dark);
+    color: #4a4a4a;
+    font-size: 1.05rem;
   }
 
   .modal-body p {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
   }
 
   .modal-body h3 {
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
   }
 
+  .modal-body ul {
+    margin-bottom: var(--spacing-md);
+    padding-left: 1.5rem;
+  }
 
+  .modal-body li {
+    margin-bottom: 0.5rem;
+  }
 
   /* Responsive para el modal */
   @media (max-width: 768px) {
@@ -404,79 +568,50 @@ const modalId = `modal-${Math.random().toString(36).substr(2, 9)}`;
     }
 
     .modal-content {
-      padding: var(--spacing-sm);
+      padding: var(--spacing-md);
+      margin-top: -16px;
     }
 
     .modal-title {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
 
-    .modal-meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
+    .modal-meta-wrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .modal-close {
+      width: 36px;
+      height: 36px;
+      top: 10px;
+      right: 10px;
     }
   }
 
   @media (max-width: 480px) {
     .modal-overlay {
-      padding: 0.5rem;
+      padding: 0;
+    }
+    
+    .modal-container {
+      border-radius: 0;
+      max-height: 100vh;
+      height: 100vh;
     }
 
     .modal-header {
-      height: 180px;
+      height: 220px;
     }
 
     .modal-title {
-      font-size: 1.25rem;
+      font-size: 1.4rem;
     }
 
-    .modal-close {
-      width: 35px;
-      height: 35px;
-    }
-  }
-
-  /* Responsive para la card */
-  @media (max-width: 768px) {
     .blog-card {
-      width: 80%;
-      margin: auto;
-    }
-    
-    .blog-image {
-      height: 180px;
-    }
-    
-    .blog-content {
-      padding: var(--spacing-sm);
-    }
-    
-    .blog-meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
+      width: 100%;
     }
   }
 
-  @media (max-width: 480px) {
-    .blog-card {
-      width: 85%;
-      margin: auto;
-    }
-    
-    .blog-image {
-      height: 180px;
-    }
-    
-    .blog-content {
-      padding: var(--spacing-sm);
-    }
-    
-    .blog-meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
-    }
-  }
 </style>
