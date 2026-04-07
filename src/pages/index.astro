@@ -34,11 +34,50 @@ import '../styles/global.css';
         </div>
       </div>
       <div class="hero-image">
-        <img src="./hero/imagen-hero.jpg" 
+        <img src="./hero/imagen-hero2.jpeg" 
              alt="Panadería artesanal" 
              loading="eager" />
       </div>
     </section>
+
+    <!-- Ticker Strip -->
+    <div class="ticker-strip" aria-hidden="true">
+      <div class="ticker-track">
+        <!-- Grupo 1 -->
+        <div class="ticker-group">
+          <span>Pan de Hamburguesa</span><span class="ticker-dot">•</span>
+          <span>Pan de Lomito</span><span class="ticker-dot">•</span>
+          <span>Pan de Choripán</span><span class="ticker-dot">•</span>
+          <span>Pan de Pizza</span><span class="ticker-dot">•</span>
+          <span>Pan de Pebete</span><span class="ticker-dot">•</span>
+          <span>Pan de Papa</span><span class="ticker-dot">•</span>
+          <span>Pan de Milanesa</span><span class="ticker-dot">•</span>
+          <span>Pan de Pancho</span><span class="ticker-dot">•</span>
+        </div>
+        <!-- Grupo 2 -->
+        <div class="ticker-group">
+          <span>Pan de Hamburguesa</span><span class="ticker-dot">•</span>
+          <span>Pan de Lomito</span><span class="ticker-dot">•</span>
+          <span>Pan de Choripán</span><span class="ticker-dot">•</span>
+          <span>Pan de Pizza</span><span class="ticker-dot">•</span>
+          <span>Pan de Pebete</span><span class="ticker-dot">•</span>
+          <span>Pan de Papa</span><span class="ticker-dot">•</span>
+          <span>Pan de Milanesa</span><span class="ticker-dot">•</span>
+          <span>Pan de Pancho</span><span class="ticker-dot">•</span>
+        </div>
+        <!-- Grupo 3 -->
+        <div class="ticker-group">
+          <span>Pan de Hamburguesa</span><span class="ticker-dot">•</span>
+          <span>Pan de Lomito</span><span class="ticker-dot">•</span>
+          <span>Pan de Choripán</span><span class="ticker-dot">•</span>
+          <span>Pan de Pizza</span><span class="ticker-dot">•</span>
+          <span>Pan de Pebete</span><span class="ticker-dot">•</span>
+          <span>Pan de Papa</span><span class="ticker-dot">•</span>
+          <span>Pan de Milanesa</span><span class="ticker-dot">•</span>
+          <span>Pan de Pancho</span><span class="ticker-dot">•</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Nosotros Section -->
     <section id="nosotros" class="section bg-light">
@@ -65,45 +104,83 @@ import '../styles/global.css';
           </div>
         </div>
 
+        <!-- Stats counter row -->
+        <div class="stats-row fade-in">
+
+          <div class="stat-item" data-target="10" data-suffix="+ años">
+            <span class="stat-number" id="stat-anios">0</span>
+            <span class="stat-label">Años en el rubro</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" data-target="150" data-suffix="+ clientes">
+            <span class="stat-number" id="stat-clientes">0</span>
+            <span class="stat-label">Clientes activos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" data-target="14" data-suffix=" productos">
+            <span class="stat-number" id="stat-productos">0</span>
+            <span class="stat-label">Variedades de pan</span>
+          </div>
+        </div>
+
         <div class="values-grid grid grid-3">
+
+          <!-- Misión -->
           <div class="value-card fade-in">
-            <div class="value-icon">
-              <img class="imagen-vmv" src="./santo_horno/mision.jpeg" alt="Mision">
+            <div class="value-card-image">
+              <img src="./santo_horno/mision.jpeg" alt="Misión" />
+              <div class="value-card-img-overlay"></div>
+
             </div>
-            <h4 style="font-family: var(--font-secondary);">Misión</h4>
-            <p>
-              Hacer los panes más ricos, de mejor calidad y a un buen precio, 
-              autosuperándonos dia a dia y trabajando con profesionalismo para lograr la satisfacción de nuestros 
-              clientes, generando una relación a largo plazo.
-            </p>
+            <div class="value-card-body">
+              <h4>Misión</h4>
+              <p>Hacer los panes más ricos, de mejor calidad y a un buen precio, autosuperándonos día a día y trabajando con profesionalismo para lograr la satisfacción de nuestros clientes, generando una relación a largo plazo.</p>
+            </div>
           </div>
 
+          <!-- Visión -->
           <div class="value-card fade-in">
-            <div class="value-icon">
-              <img class="imagen-vmv" src="./santo_horno/vision.jpeg" alt="Visión">
+            <div class="value-card-image">
+              <img src="./santo_horno/vision.jpeg" alt="Visión" />
+              <div class="value-card-img-overlay"></div>
+
             </div>
-            <h4 style="font-family: var(--font-secondary);">Visión</h4>
-            <p>
-              Ser una empresa líder en producción y comercialización de panes para gastronomía, 
-              llegando a los mercados más rentables donde nos podamos desarrollar.
-            </p>
+            <div class="value-card-body">
+              <h4>Visión</h4>
+              <p>Ser una empresa líder en producción y comercialización de panes para gastronomía, llegando a los mercados más rentables donde nos podamos desarrollar.</p>
+            </div>
           </div>
 
+          <!-- Valores -->
           <div class="value-card fade-in">
-            <div class="value-icon">
-              <img class="imagen-vmv" src="./santo_horno/valores.jpeg" alt="Valores">
+            <div class="value-card-image">
+              <img src="./santo_horno/valores.jpeg" alt="Valores" />
+              <div class="value-card-img-overlay"></div>
+
             </div>
-            <h4 style="font-family: var(--font-secondary);">Valores</h4>
-            <p>
-              Salud, Transparencia, Honestidad, Compromiso, Eficiencia.
-            </p>
+            <div class="value-card-body">
+              <h4>Valores</h4>
+              <ul class="value-list">
+                <li>Salud</li>
+                <li>Transparencia</li>
+                <li>Honestidad</li>
+                <li>Compromiso</li>
+                <li>Eficiencia</li>
+              </ul>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
     <!-- Productos Section -->
     <section id="productos" class="section">
+      <div class="wave-divider wave-top-light" aria-hidden="true">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+      </div>
       <div class="container">
         <h2 class="section-title fade-in">Nuestros Productos</h2>
         <div class="products-grid grid grid-3">
@@ -137,21 +214,13 @@ import '../styles/global.css';
             category="Pan"
           />
 
+
           <ProductCard 
-            name="PAN DE HAMBURGUESA TIPO VIENA SIN SEMILLAS"
-            image="./productos/pan_hamburguesa_tipo_viena_sin_semilla.jpeg"
-            size="Bolsa de 15 unidades"
-            descriptionItems={["Tamaño chico 9cm"]}
-            lockTitleHeight={3.25}
-            category="Pan"
-          />
-          
-          <ProductCard 
-            name="PAN DE HAMBURGUESA RUSTICO"
+            name="PAN RUSTICO"
             image="./productos/pan_hamburguesa_rustico.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 12 unidades"
             descriptionItems={["Tamaño grande 12cm"]}
-            lockTitleHeight={2.25}
+            lockTitleHeight={3.35}
             category="Pan"
           />
           
@@ -225,7 +294,6 @@ import '../styles/global.css';
             image="./productos/masa_pizzeta.png?auto=compress&cs=tinysrgb&w=400"
             size="Bolsa de 10 unidades"
             descriptionItems={["Tamaño 20cm"]}
-            lockTitleHeight={3.45}
             category="Pan"
           />
 
@@ -252,6 +320,11 @@ import '../styles/global.css';
 
     <!-- Clientes Section -->
     <section id="clientes" class="section bg-light">
+      <div class="wave-divider wave-top-white" aria-hidden="true">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+      </div>
       <div class="container">
         <h2 class="section-title fade-in">Nuestros Clientes</h2>
         <p class="section-subtitle fade-in text-center">
@@ -266,6 +339,11 @@ import '../styles/global.css';
 
     <!-- Blog Section -->
     <section id="blog" class="section">
+      <div class="wave-divider wave-top-light" aria-hidden="true">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+      </div>
       <div class="container">
         <h2 class="section-title fade-in">Blog</h2>
         <p class="section-subtitle fade-in text-center">
@@ -331,7 +409,7 @@ import '../styles/global.css';
               excerpt='Estamos sumando un nuevo pan que muchos nos pedían: ¿Te imaginás un sándwich con la base crocante y la miga húmeda de una buena pizza al molde?'
               image='./blog/pan_pizza_nuevo.jpeg'
               date='28 Jul 2025'
-              category='Nuevos Productos'
+              category='Productos'
               fullContent={`
                 <p><strong>Ideal para:</strong></p>
                 <ul>
@@ -346,8 +424,69 @@ import '../styles/global.css';
 </div>
     </section>
 
+    <!-- Ubicación Section -->
+    <section id="ubicacion" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Nuestras Ubicaciones</h2>
+        <p class="section-subtitle fade-in text-center">
+          Encontranos en nuestros dos puntos de atención en Córdoba
+        </p>
+        
+        <div class="grid grid-2 fade-in" style="gap: 2rem; margin-top: var(--spacing-lg);">
+          
+          <!-- Local Venta al Público -->
+          <div class="map-container" style="margin-top: 0;">
+            <div class="map-wrapper map-wrapper-split">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.2488873255093!2d-64.19763212325779!3d-31.434814397144432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a28aa06a7341%3A0x73e62b40681d6fa4!2sAvenida%20V%C3%A9lez%20Sarsfield%201696!5e0!3m2!1ses!2sar!4v1775577054153!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map-info map-info-split">
+              <div class="map-info-item">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <div>
+                  <h4 class="map-title">Local Venta al Público</h4>
+                  <p class="map-desc">Av. Vélez Sarsfield 1696, B° Güemes, Córdoba</p>
+                </div>
+              </div>
+              <a href="https://maps.google.com/?q=Avenida+Vélez+Sarsfield+1696,+Córdoba" target="_blank" rel="noopener noreferrer" class="btn map-btn-split">
+                Obtener indicaciones
+              </a>
+            </div>
+          </div>
+
+          <!-- Fábrica -->
+          <div class="map-container" style="margin-top: 0;">
+            <div class="map-wrapper map-wrapper-split">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.6620168167537!2d-64.20004372325718!3d-31.450970397926266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432994dd17a3f43%3A0x6297b9e35ba0005b!2sPanificadora%20Santo%20Horno%3A%20Panes%20para%20gastronomia!5e0!3m2!1ses!2sar!4v1775573830211!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map-info map-info-split">
+              <div class="map-info-item">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <div>
+                  <h4 class="map-title text-secondary">Fábrica Principal</h4>
+                  <p class="map-desc">Lautaro 150, B° Las Flores, Córdoba</p>
+                </div>
+              </div>
+              <a href="https://www.google.com/maps?cid=7104351323346174043&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=es&gl=AR&source=embed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary map-btn-split">
+                Obtener indicaciones
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Contacto Section -->
     <section id="contacto" class="section bg-light">
+      <div class="wave-divider wave-top-white" aria-hidden="true">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+      </div>
       <div class="container">
         <h2 class="section-title fade-in">Contacto</h2>
         
@@ -422,14 +561,15 @@ import '../styles/global.css';
               </div>
               <div class="contact-method">
                 <div class="contact-icon">
+                  <!-- Clock icon -->
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                   </svg>
                 </div>
                 <div>
                   <h4 style="font-family: var(--font-secondary);">Horarios de atención</h4>
                   <p><span style="font-weight: 400; font-weight: bold;">Fábrica:</span> Lunes a Sábados de 8:00 a 14:30.</p>
-                  <p><span style="font-weight: 400; font-weight: bold;">Local de venta al público:</span> Lunes a Viernes de 8:00 a 16:00 y Sábados de 8:00 a 14:30.</p>
+                  <p><span style="font-weight: 400; font-weight: bold;">Local de venta al público:</span> Lunes a Viernes de 9:00 a 16:30 y Sábados de 9:00 a 14:30.</p>
                 </div>
               </div>
             </div>
@@ -460,17 +600,178 @@ import '../styles/global.css';
 
 <style>
 
+  /* =============================================
+     SEPARADORES DE SECCIÓN SVG ONDA
+  ============================================= */
+  section {
+    position: relative; /* Base para el separador wave absoluto */
+  }
+
+  .wave-divider {
+    position: absolute;
+    top: -1px; /* Evita lineas blancas fantasma en border */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    height: 40px; /* Tamaño wave de base */
+    z-index: 10;
+  }
+
+  .wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100%;
+  }
+
+  .wave-top-light .shape-fill {
+    fill: var(--color-light); /* Hereda el beige */
+  }
+
+  .wave-top-white .shape-fill {
+    fill: var(--color-white); /* Hereda el blanco de fondo general */
+  }
+
+  @media (min-width: 768px) {
+    .wave-divider {
+      height: 70px;
+    }
+  }
+
   article h1, aside h1, nav h1, section h1 {
     font-size: 2.5rem !important;
     margin: 0.67em 0;
   }
   
+  /* =============================================
+     HERO ENHANCEMENTS
+  ============================================= */
+
   .hero {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     background: linear-gradient(135deg, var(--color-light) 0%, var(--color-white) 100%);
+  }
+
+  /* 1. Hero Image */
+
+  /* 2. CTA Button shimmer effect */
+  .btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 70%
+    );
+    transform: skewX(-15deg);
+    animation: btn-shimmer 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .btn-secondary::after {
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(139, 90, 60, 0.25) 50%,
+      transparent 70%
+    );
+  }
+
+  @keyframes btn-shimmer {
+    0%   { left: -75%; }
+    40%  { left: 125%; }
+    100% { left: 125%; }
+  }
+
+  /* 3. Ticker strip */
+  .ticker-strip {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-primary) 100%);
+    background-size: 200% 100%;
+    animation: ticker-bg-shift 8s linear infinite;
+    padding: 0.7rem 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Fade edges */
+  .ticker-strip::before,
+  .ticker-strip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .ticker-strip::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-primary), transparent);
+  }
+
+  .ticker-strip::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-primary), transparent);
+  }
+
+  .ticker-track {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker-scroll 25s linear infinite;
+    width: max-content;
+  }
+
+  .ticker-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-right: 1.5rem; /* Mantiene la consistencia del espaciado entre grupos */
+  }
+
+  .ticker-strip:hover .ticker-track {
+    animation-play-state: paused;
+  }
+
+  .ticker-group span {
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.92);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+  }
+
+  .ticker-dot {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 1.1rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-33.333333%); }
+  }
+
+  @keyframes ticker-bg-shift {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
   }
 
   .logo-script {
@@ -547,47 +848,218 @@ import '../styles/global.css';
     box-shadow: var(--shadow-md);
   }
 
+  /* =============================================
+     STATS COUNTER ROW
+  ============================================= */
+  .stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: var(--color-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    box-shadow: 0 8px 32px rgba(44, 24, 16, 0.18);
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle grain texture on stats bar */
+  .stats-row::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(230, 126, 34, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    flex: 1;
+    min-width: 140px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-number {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-white);
+    line-height: 1;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+  }
+
+  .stat-number::after {
+    content: attr(data-suffix);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .stat-label {
+    font-family: var(--font-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.65);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.35rem;
+    text-align: center;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+  }
+
+  /* =============================================
+     VALUE CARDS — Misión / Visión / Valores
+  ============================================= */
   .values-grid {
-    margin-top: var(--spacing-xl);
+    margin-top: 0;
   }
 
   .value-card {
     background: var(--color-white);
-    padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    border: 2px solid transparent;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(44, 24, 16, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid rgba(139, 90, 60, 0.08);
+    display: flex;
+    flex-direction: column;
   }
 
   .value-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-secondary);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(44, 24, 16, 0.16);
   }
 
-  .value-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    border-radius: 50%;
+  /* Image area */
+  .value-card-image {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+  }
+
+  .value-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .value-card:hover .value-card-image img {
+    transform: scale(1.06);
+  }
+
+  /* Gradient overlay on image */
+  .value-card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 35%,
+      rgba(44, 24, 16, 0.5) 100%
+    );
+    pointer-events: none;
+  }
+
+
+
+  /* Text body */
+  .value-card-body {
+    padding: var(--spacing-md);
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .value-card-body h4 {
+    font-family: var(--font-secondary);
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Underline accent on title */
+  .value-card-body h4::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    border-radius: 2px;
+    margin: 0.35rem auto 0;
+    transition: width 0.35s ease;
+  }
+
+  .value-card:hover .value-card-body h4::after {
+    width: 60px;
+  }
+
+  .value-card-body p {
+    color: rgb(85, 80, 75);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin: 0;
+    font-family: var(--font-body);
+  }
+
+  /* Values list (Valores card) */
+  .value-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: left;
+  }
+
+  .value-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto var(--spacing-md);
-    color: var(--color-white);
+    gap: 0.6rem;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    color: rgb(85, 80, 75);
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    transition: background 0.2s ease;
   }
 
-  .value-card h4 {
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+  .value-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    flex-shrink: 0;
   }
 
-  .imagen-vmv{
-      width: 200px;
-      height: 175px;
-    }
+  .value-list li:hover {
+    background: rgba(230, 126, 34, 0.07);
+  }
 
   /* Products Section */
   .products-filter {
@@ -653,6 +1125,13 @@ import '../styles/global.css';
     font-weight: 600;
     color: var(--color-primary);
     font-family: var(--font-secondary);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  /* Efecto moderno: el label se desplaza sutilmente a la derecha cuando el campo está enfocado */
+  .form-group:focus-within label {
+    transform: translateX(4px);
+    color: var(--color-secondary);
   }
 
   .form-group input,
@@ -661,15 +1140,18 @@ import '../styles/global.css';
     border: 2px solid #ddd;
     border-radius: var(--border-radius);
     font-size: 1rem;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     font-family: var(--font-body);
+    background: var(--color-white);
   }
 
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 3px rgba(231, 126, 34, 0.1);
+    border-color: rgba(202, 138, 73, 0.4);
+    /* Resaltado del borde izquierdo estilo "barra de estado" y fondo cálido */
+    background: rgba(231, 126, 34, 0.02);
+    box-shadow: -4px 0 0 var(--color-secondary), 0 4px 12px rgba(44, 24, 16, 0.04);
   }
 
   .contact-methods {
@@ -813,9 +1295,29 @@ import '../styles/global.css';
     }
 
     .imagen-vmv{
-      width: 200px;
-      height: 160px;
-      margin-top: 40px;
+      display: none;
+    }
+
+    .stats-row {
+      gap: var(--spacing-sm);
+      padding: var(--spacing-md);
+    }
+
+    .stat-divider {
+      display: none;
+    }
+
+    .stat-item {
+      min-width: 120px;
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+    }
+
+    .flip-card {
+      height: 300px;
     }
   }
 
@@ -842,9 +1344,132 @@ import '../styles/global.css';
     }
 
     .imagen-vmv{
-      width: 200px;
-      height: 155px;
-      margin-top: 30px;
+      display: none;
+    }
+
+    .flip-card {
+      height: 280px;
+    }
+  }
+  /* =============================================
+     MAPA SECTION
+  ============================================= */
+  .map-container {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-top: var(--spacing-lg);
+  }
+
+  .map-wrapper {
+    width: 100%;
+    height: 450px;
+    background: #f0f0f0;
+  }
+
+  .map-wrapper-split {
+    height: 350px;
+  }
+
+  .map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: grayscale(15%) contrast(1.05); /* Suaviza los colores del mapa para que se integre al estilo de la web */
+    transition: filter 0.5s ease;
+  }
+
+  .map-wrapper:hover iframe {
+    filter: none;
+  }
+
+  .map-info {
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-light);
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .map-info-split {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .map-info-split .map-info-item {
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: center;
+  }
+
+  .map-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-dark);
+  }
+
+  .map-title {
+    font-family: var(--font-secondary);
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    line-height: 1;
+    font-size: 1.4rem;
+    color: var(--color-primary);
+  }
+
+  .map-title.text-secondary {
+    color: var(--color-dark);
+  }
+
+  .map-desc {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .map-btn-split {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .map-info-item svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .map-info-item p {
+    font-size: 0.95rem;
+    color: var(--color-gray);
+  }
+
+  @media (max-width: 768px) {
+    .map-wrapper-split {
+      height: 300px;
+    }
+
+    .map-info {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+      padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .map-info-item {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .map-btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>
@@ -881,17 +1506,61 @@ import '../styles/global.css';
       });
     }
 
-    filterButtons.forEach(button => {
+  // Animated number counter — activates on scroll
+  const animateCounter = (el, target, suffix) => {
+    let start = 0;
+    const duration = 1800;
+    const startTime = performance.now();
+
+    const update = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(eased * target);
+      el.textContent = current;
+      el.setAttribute('data-suffix', suffix);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(update);
+  };
+
+  const statsRow = document.querySelector('.stats-row');
+  if (statsRow) {
+    let triggered = false;
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !triggered) {
+          triggered = true;
+          document.querySelectorAll('.stat-item').forEach(item => {
+            const numEl = item.querySelector('.stat-number');
+            const target = parseInt(item.dataset.target, 10);
+            const suffix = item.dataset.suffix;
+            if (numEl && target) animateCounter(numEl, target, suffix);
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+    statsObserver.observe(statsRow);
+  }
+
+  // Flip cards — also flip on Enter/Space for keyboard accessibility
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('flipped');
+      }
+    });
+  });
+
+  // Filter buttons
+  filterButtons.forEach(button => {
       button.addEventListener('click', () => {
-        // Remover clase active de todos los botones
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Agregar clase active al botón clickeado
         button.classList.add('active');
-        
         const filter = button.getAttribute('data-filter');
-        
-        // Mostrar/ocultar productos (esta funcionalidad se puede expandir)
         console.log(`Filtrar por: ${filter}`);
       });
     });

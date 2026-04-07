@@ -21,34 +21,89 @@ const clients = [
 ];
 ---
 
-<div class="clients-slider">
-  <div class="slider-track">
-    {clients.concat(clients).map((client, index) => (
-      <div class="client-item" key={index}>
-        <img 
-          src={client.logo} 
-          alt={`Logo de ${client.name}`} 
-          loading="lazy"
-        />
-        <span class="client-name">{client.name}</span>
-      </div>
-    ))}
+<div class="clients-slider-wrapper">
+  <!-- Línea decorativa superior -->
+  <div class="slider-accent-line slider-accent-line--top"></div>
+
+  <div class="clients-slider">
+    <div class="slider-track">
+      {clients.concat(clients).map((client, index) => (
+        <div class="client-item" key={index}>
+          <img 
+            src={client.logo} 
+            alt={`Logo de ${client.name}`} 
+            loading="lazy"
+          />
+          <span class="client-name">{client.name}</span>
+        </div>
+      ))}
+    </div>
   </div>
+
+  <!-- Línea decorativa inferior -->
+  <div class="slider-accent-line slider-accent-line--bottom"></div>
 </div>
 
 <style>
+  /* ── Contenedor Principal (Wrapper) ── */
+  .clients-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ── Líneas Decorativas Animadas ── */
+  .slider-accent-line {
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-secondary) 20%,
+      var(--color-primary) 50%,
+      var(--color-secondary) 80%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: line-shimmer 4s ease infinite;
+  }
+
+  @keyframes line-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ── Slider con Efecto Fade Lateral (Mask-Image) ── */
   .clients-slider {
     overflow: hidden;
-    background: var(--color-white);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-sm);
     padding: var(--spacing-md) 0;
+    /* Difumina los bordes izquierdo y derecho para que los logos "aparezcan" y "desaparezcan" suavemente */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
   }
 
   .slider-track {
     display: flex;
     animation: scroll 30s linear infinite;
     gap: var(--spacing-lg);
+  }
+
+  /* Pausar la animación cuando el usuario hace hover en todo el contenedor */
+  .clients-slider-wrapper:hover .slider-track {
+    animation-play-state: paused;
   }
 
   .client-item {
@@ -72,27 +127,29 @@ const clients = [
     object-fit: cover;
     border-radius: 50%;
     filter: grayscale(100%);
-    transition: var(--transition);
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
     box-shadow: var(--shadow-sm);
   }
 
   .client-item:hover img {
     filter: grayscale(0%);
     transform: scale(1.1);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 6px 15px rgba(139, 90, 60, 0.3); /* Sombra elegante */
   }
 
   .client-name {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.8rem; /* Un poco más pequeño y sutil */
+    font-weight: 600; /* Un poco más grueso */
     color: var(--color-primary);
     text-align: center;
-    opacity: 0.8;
+    opacity: 0.6; /* Más apagado por defecto */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: var(--transition);
   }
 
   .client-item:hover .client-name {
-    opacity: 1;
+    opacity: 1; /* Se enciende al hover */
     color: var(--color-secondary);
   }
 
@@ -105,10 +162,6 @@ const clients = [
     }
   }
 
-  /* Pausar animación al hover */
-  .clients-slider:hover .slider-track {
-    animation-play-state: paused;
-  }
 
   @media (max-width: 768px) {
     .slider-track {
@@ -126,7 +179,13 @@ const clients = [
     }
     
     .client-name {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+    }
+    
+    /* Ajustar el fade en móviles si es necesario */
+    .clients-slider {
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
     }
   }
 </style>
