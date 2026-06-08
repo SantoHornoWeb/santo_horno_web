@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# Conventional Commits
+commits.mdc
+
 # generated types
 .astro/
 
